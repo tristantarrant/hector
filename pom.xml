@@ -299,7 +299,7 @@
 			<groupId>org.apache.cassandra</groupId>
 			<artifactId>cassandra-javautils</artifactId>
 			<version>0.6.5</version>
-			<scope>test</scope>
+			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
