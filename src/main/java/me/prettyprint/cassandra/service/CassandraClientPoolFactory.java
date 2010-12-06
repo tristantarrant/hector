@@ -53,7 +53,7 @@ public enum CassandraClientPoolFactory {
    */
   public CassandraClientPool createDefault() {
     log.debug("Creating a new CassandraClientPool...");
-    CassandraClientPool pool = new CassandraClientPoolImpl(
+    CassandraClientPool pool = new CassandraClientPoolCCP(
         JmxMonitor.INSTANCE.getCassandraMonitor());
     JmxMonitor.INSTANCE.addPool(pool);
     if ( log.isDebugEnabled() ) {
@@ -72,7 +72,7 @@ public enum CassandraClientPoolFactory {
    */
   public CassandraClientPool createNew(CassandraHostConfigurator cassandraHostConfigurator) {
     log.debug("Creating a new CassandraClientPool...");
-    CassandraClientPool pool = new CassandraClientPoolImpl(
+    CassandraClientPool pool = new CassandraClientPoolCCP(
         JmxMonitor.INSTANCE.getCassandraMonitor(), cassandraHostConfigurator);
     JmxMonitor.INSTANCE.addPool(pool);
     if ( log.isDebugEnabled() ) {
